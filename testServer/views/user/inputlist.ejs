@@ -1,0 +1,62 @@
+<html lang = "ko">
+<head>
+  <meta charset="UTF-8">
+  <title> Contents Registeration </title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<style>
+ body{
+  background-image: url('/img/Background.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  }
+  </style>
+<body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+
+    function maxLengthCheck(object){
+      if (object.value.length > object.maxLength){
+        object.value = object.value.slice(0, object.maxLength);
+      }
+    }
+
+  </script>
+  <div id="header">
+  	<div id="wrapper">
+      <!-- content-->
+      <form action="inputlist/submit_list" method="post">
+      <div id="content">
+          <!-- ID -->
+          <div>
+              <h3 class="join_title">
+                  <label for="id">길드 스킬 수명</label>
+              </h3>
+              <span class="life_box int_id">
+                  <input name="life" type="number" min="0" max="99" id="id" class="main_nick_class" maxlength="2" oninput="maxLengthCheck(this)">
+                  <span class="step_url">일</span>
+              </span>
+              <span class="error_next_box"></span>
+          </div>
+          <div>
+              <h3 class="join_title">
+                  <label for="id">인원 명단(엔터로 유저 구분)</label>
+              </h3>
+              <span class="box int_textarea">
+                  <textarea id="sub_name" name="list" class="sub_nick_class"></textarea>
+              </span>
+              <span class="error_next_box"></span>
+          </div>
+          <!-- JOIN BTN-->
+          <div class="btn_area">
+              <button type="submit" id="btnJoin">
+                  <span>Registeration</span>
+              </button>
+          </div>
+      </div>
+      <!-- content-->
+    </form>
+    </div>
+  </div>
+</html>

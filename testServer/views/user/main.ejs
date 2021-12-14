@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel = "stylesheet" href="/css/style.css">
+    <title>임시용 웹페이지</title>
+</head>
+<style>
+ body{
+  background-image: url('/img/Background.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  }
+  </style>
+  <body>
+    <% if(session.userID){ %>
+      <form action="/user/logout" method="get">
+      <div class="top_container">
+        <div class="option_wrap">
+          <div class="optbarLeft">
+            <img src="/img/gL_Master.png">
+          </div>
+          <div class="optbarRight">
+        <button type="submit"> Log Out </button>
+          </div>
+      </div>
+      </form>
+    </div>
+    <div class="InputData">
+      <div class="ListButton_wrap">
+        <div class="ListButton">
+          <form action="/user/main/inputlist" method="post">
+          <button type="submit"> Input List </button>
+        </form>
+        <form action="/user/main/inputtag" method="post">
+          <div class="TagButton">
+            <button type="submit"> Input Tag </button>
+          </div>
+        </form>
+      </div>
+    </div>
+      <div class="mid-container">
+        <div class="mid-wrap">
+          <header>
+            <div class="logo-wrap">
+              <div class="HeadText">
+              <p> Result List</p>
+              </div>
+              <div class="ListText">
+                <ul>
+                <% for(let post of posts) { %>
+                    <li>
+                      <div id="ListName"> <%= post.Name %> </div>
+                      <div id="ListLevel"> <%= post.Hierarchy %> </div>
+                    </li>
+                  <% } %>
+                </ul>
+              </div>
+            </div>
+          </header>
+        </div>
+    </div>
+    <% }else{ %>
+      <meta http-equiv="refresh" content="0; url=http://210.105.34.140:3000/user/login"></meta>
+      <% } %>
+   </body>
+</html>

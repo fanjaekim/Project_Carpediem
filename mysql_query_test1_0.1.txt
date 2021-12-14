@@ -1,0 +1,93 @@
+create table Hierarchy_Dictionary(
+Position varchar(20),
+Hierarchy varchar(20) not null,
+Ranking int not null,
+Primary key(Ranking)
+);
+
+Insert into Hierarchy_Dictionary(Position, Hierarchy, Ranking)
+values ('마스터', 'Carpediem', 1);
+Insert into Hierarchy_Dictionary(Position, Hierarchy, Ranking)
+values ('부마스터', '기사단장', 2);
+Insert into Hierarchy_Dictionary(Position, Hierarchy, Ranking)
+values ('dummy', '정식기사', 3);
+Insert into Hierarchy_Dictionary(Position, Hierarchy, Ranking)
+values ('dummy', '견습기사', 4);
+Insert into Hierarchy_Dictionary(Position, Hierarchy, Ranking)
+values ('길드원', 'Nobless', 5);
+
+create table Guild_List(
+Position varchar(20) not null,
+Name varchar(20) not null,
+Primary Key(Name)
+);
+
+Insert into Guild_List(Position, Name)
+values ('부마스터', '오렌쥐당');
+Insert into Guild_List(Position, Name)
+values ('마스터', 'gL창');
+Insert into Guild_List(Position, Name)
+values ('부마스터', '샹이에오');
+Insert into Guild_List(Position, Name)
+values ('부마스터', '남선영');
+Insert into Guild_List(Position, Name)
+values ('길드원', '불닭프레이');
+Insert into Guild_List(Position, Name)
+values ('길드원', '그냥여백');
+Insert into Guild_List(Position, Name)
+values ('길드원', '그냥태양임');
+
+create table Tag_List(
+Name varchar(20) not null,
+Tag varchar(20) not null,
+Primary Key(Name),
+Foreign Key(Tag) References Tag_List(Name)
+);
+
+
+create table Management_List(
+Name varchar(20) not null,
+Life int not null default '0',
+Ranking int not null,
+Primary Key(Name),
+Foreign Key(Name) References Guild_List(Name),
+Foreign Key(Ranking) References Hierarchy_Dictionary(Ranking)
+);
+
+create table Result_List(
+Name varchar(20) not null,
+Hierarchy varchar(20) not null,
+Primary Key(Name),
+Foreign Key(Name) References Management_List(Name)
+);
+
+
+-------------- Procedure ---------------
+Drop Procedure IF Exists update_tag_list;
+
+DELIMITER $$
+Create Procedure update_tag_list()
+BEGIN
+Insert IGNORE into Tag_List (Name, Tag)
+Select Name, Name From Guild_List;
+END $$
+DELIMITER ;
+
+-------------- Event ---------------
+Create
+event evt_tag
+on schedule every 1 day
+starts '2021-02-26 15:31:00'
+Do
+Call update_tag_list();
+
+삭제법
+Drop Event evt_tag;
+
+
+삭제 순서
+drop table result_list;
+drop table tag_list;
+drop table management_list;
+drop table guild_list;
+drop table hierarchy_dictionary;

@@ -1,0 +1,449 @@
+:root{
+	--body-background-color: #f5f6f7;
+	--font-color: #4e4e4e;
+	--border-gray-color : #dadada;
+	--naver-green-color: #04c75a;
+	--naver-green-border-color: #06b350;
+}
+
+*{
+	margin:0;
+	padding:0;
+}
+
+.main-container{
+	width:100%;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	margin-top: 200px;
+}
+
+.main-container .main-wrap{
+	width:768px;
+}
+
+.main-container .main-wrap header .logo-wrap{
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.login-input-section-wrap{
+	padding-top: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.login-input-wrap{
+	width: 465px;
+	height :48px;
+	border: solid 1px var(	--naver-green-color );
+	background: white;
+}
+
+.login-input-wrap input{
+	border: none;
+	width:430px;
+	margin-top: 10px;
+	font-size: 14px;
+	margin-left: 10px;
+	height:30px;
+}
+
+.password-wrap{
+	margin-top: 13px;
+}
+
+.login-button-wrap {
+	padding-top: 13px;
+}
+
+.create-button-wrap {
+	padding-top: 13px;
+}
+
+.login-button-wrap button{
+	width: 465px;
+	height :48px;
+	font-size: 18px;
+	background: var(--naver-green-color);
+	color: white;
+	border: solid 1px var(--naver-green-border-color);
+}
+
+.create-button-wrap button{
+	width: 465px;
+	height :48px;
+	font-size: 18px;
+	background: var(--naver-green-color);
+	color: white;
+	border: solid 1px var(--naver-green-border-color);
+}
+
+/* Main CSS */
+.top_container{
+	width:100%;
+	display:flex;
+	flex-direction:row;
+	align-items:center;
+	margin-top: 20px;
+	height: 30px;
+}
+
+.top_container .option_wrap{
+	width:100%;
+	display: flex;
+	flex-direction: row;
+}
+
+.top_container .option_wrap .optbarLeft{
+	width:75%;
+}
+
+.top_container .option_wrap .optbarRight{
+	width:25%;
+}
+
+.top_container .option_wrap .optbarRight button{
+	margin-top: 20px;
+	width: 150px;
+	height :20px;
+	font-size: 14px;
+	background: var(--naver-green-color);
+	color: white;
+	border: solid 1px var(--naver-green-border-color);
+}
+
+/* Input Data */
+.mid-container{
+	width:100%;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	margin-top: 40px;
+}
+
+.mid-container .mid-wrap{
+	width:400px;
+}
+
+.mid-container .mid-wrap header .logo-wrap{
+	display:flex;
+	flex-direction: column;
+	text-align: center;
+}
+
+.mid-container .mid-wrap header .logo-wrap .HeadText{
+	background-color: var(--naver-green-color);
+}
+
+.mid-container .mid-wrap header .logo-wrap .HeadText p{
+	font-size: 25px;
+	color: black;
+	font-weight: bold;
+	border: solid 3px black;
+}
+
+.mid-container .mid-wrap header .logo-wrap .ListText{
+	width: 400px;
+	flex-direction:row;
+	align-items: center;
+	background-color: black;
+}
+
+.mid-container .mid-wrap header .logo-wrap .ListText ul{
+	list-style: none;
+	border: solid 3px black;
+}
+
+#ListName{
+	background-color: white;
+	display: inline-block;
+	width: 49%;
+	font-weight: bold;
+	font-size: 18px;
+	margin: 0px auto;
+	padding-top: 2.5px;
+	padding-bottom: 2.5px;
+	border-top: solid 1px black;
+	border-bottom: solid 1px black;
+}
+
+#ListLevel{
+	background-color: orange;
+	display: inline-block;
+	width: 49%;
+	font-weight: bold;
+	font-size: 18px;
+	margin: 0px auto;
+	padding-top: 2.5px;
+	padding-bottom: 2.5px;
+	border-top: solid 1px black;
+	border-bottom: solid 1px black;
+	letter-spacing: 2px;
+}
+
+.InputData{
+	width:100%;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	margin-top: 10px;
+}
+
+.InputData .ListButton_wrap{
+	width:768px;
+}
+
+.InputData .ListButton_wrap .ListButton{
+	padding-top: 10px;
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.InputData .ListButton_wrap .ListButton button{
+	margin-top: 20px;
+	width: 150px;
+	height :30px;
+	font-size: 14px;
+	background: var(--naver-green-color);
+	color: white;
+	border: solid 1px var(--naver-green-border-color);
+}
+
+.InputData .ListButton_wrap .TagButton button{
+	margin-top: 20px;
+	width: 150px;
+	height :30px;
+	font-size: 14px;
+	background: var(--naver-green-color);
+	color: white;
+	border: solid 1px var(--naver-green-border-color);
+}
+
+/* Input Tag, List CSS */
+/* 레이아웃 틀 */
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    background: #f5f6f7;
+    font-family: Dotum,'돋움',Helvetica,sans-serif;
+}
+#logo {
+    width: 240px;
+    height: 44px;
+    cursor: pointer;
+}
+
+#header {
+    padding-top: 62px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+#wrapper {
+    position: relative;
+    height: 100%;
+}
+
+#content {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: 460px;
+}
+
+textarea
+  {
+    resize:none;
+  }
+
+
+/* 입력폼 */
+
+
+h3 {
+    margin: 19px 0 8px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+.box {
+    display: block;
+    width: 100%;
+    height: 51px;
+    border: solid 2px #dadada;
+    padding: 10px 14px 10px 14px;
+    box-sizing: border-box;
+    background: #fff;
+    position: relative;
+}
+
+.life_box{
+		display: block;
+		width: 20%;
+		height: 51px;
+		border: solid 2px #dadada;
+		padding: 10px 14px 10px 14px;
+		box-sizing: border-box;
+		background: #fff;
+		position: relative;
+		align-items: center;
+		left : 180px;
+}
+
+.main_nick_class {
+    display: block;
+    position: relative;
+    width: 120%;
+    height: 29px;
+    border: none;
+    background: #fff;
+    font-size: 15px;
+}
+
+.sub_nick_class {
+    display: block;
+    position: relative;
+    width: 120%;
+    height: 100%;
+    border: none;
+    background: #fff;
+    font-size: 15px;
+}
+
+input {
+    font-family: Dotum,'돋움',Helvetica,sans-serif;
+}
+
+.box.int_id {
+    padding-right: 120px;
+}
+
+.box.int_textarea {
+    padding-right: 100px;
+    height:500px;
+    overflow-y:scroll;
+}
+
+input:focus, select:focus, option:focus, textarea:focus, button:focus{
+	outline: none;
+}
+
+.box.int_textarea2 {
+		outline: none;
+    padding-right: 100px;
+    height:250px;
+    overflow-y:scroll;
+}
+
+.box.int_pass {
+    padding-right: 40px;
+}
+
+.box.int_pass_check {
+    padding-right: 40px;
+}
+
+.step_url {
+    /*@naver.com*/
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    font-size: 15px;
+    color: #8e8e8e;
+}
+
+.pswdImg {
+    width: 18px;
+    height: 20px;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    margin-top: -10px;
+    cursor: pointer;
+}
+
+#bir_wrap {
+    display: table;
+    width: 100%;
+}
+
+#bir_yy {
+    display: table-cell;
+    width: 147px;
+
+}
+
+#bir_mm {
+    display: table-cell;
+    width: 147px;
+    vertical-align: middle;
+}
+
+#bir_dd {
+    display: table-cell;
+    width: 147px;
+}
+
+#bir_mm, #bir_dd {
+    padding-left: 10px;
+}
+
+select {
+    width: 100%;
+    height: 29px;
+    font-size: 15px;
+    background: #fff url(https://static.nid.naver.com/images/join/pc/sel_arr_2x.gif) 100% 50% no-repeat;
+    background-size: 20px 8px;
+    -webkit-appearance: none;
+    display: inline-block;
+    text-align: start;
+    border: none;
+    cursor: default;
+    font-family: Dotum,'돋움',Helvetica,sans-serif;
+}
+
+/* 에러메세지 */
+
+.error_next_box {
+    margin-top: 9px;
+    font-size: 12px;
+    color: red;
+    display: none;
+}
+
+#alertTxt {
+    position: absolute;
+    top: 19px;
+    right: 38px;
+    font-size: 12px;
+    color: red;
+    display: none;
+}
+
+/* 버튼 */
+
+.btn_area {
+    margin: 30px 0 91px;
+}
+
+#btnJoin {
+    width: 100%;
+    padding: 21px 0 17px;
+    border: 0;
+    cursor: pointer;
+    color: #fff;
+    background-color: #08a600;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: Dotum,'돋움',Helvetica,sans-serif;
+}

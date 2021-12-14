@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel = "stylesheet" href="/css/style.css">
+    <title>임시용 웹페이지</title>
+</head>
+<style>
+ body{
+  background-image: url('/img/Background.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  }
+  </style>
+  <body>
+    <% if(session.userID){ %>
+    <h3> Login Success </h3>
+    <meta http-equiv="refresh" content="0; url=http://210.105.34.140:3000/user/main"></meta>
+
+    <% }else{ %>
+    <div class="main-container">
+      <div class="main-wrap">
+              <form action="/user/login" method="post">
+                <header>
+                  <div class="logo-wrap">
+                    <img src="/img/gL_Master.png">
+                    </div>
+                </header>
+                <section class="login-input-section-wrap">
+                  <div class="login-input-wrap">
+                    <input placeholder="ID" name="login_ID" type="text"></input>
+                    </div>
+                    <div class="login-input-wrap password-wrap">
+                      <input placeholder="Password" name="login_Password" type="password"></input>
+                      </div>
+                      <div class="login-button-wrap">
+                        <button>Sign in</button>
+                        </div>
+              </form>
+              </section>
+            </div>
+      <div class="create-button-wrap">
+        <form action="/user/signup" method="post">
+        <button type="submit">Create Account</button>
+      </form>
+      </div>
+    </div>
+    <% } %>
+   </body>
+</html>

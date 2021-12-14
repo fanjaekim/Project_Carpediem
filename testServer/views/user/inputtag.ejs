@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang = "ko">
+<head>
+  <meta charset="utf-8">
+  <title> Tag Registeration </title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<style>
+ body{
+  background-image: url('/img/Background.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  }
+  </style>
+<body>
+  <div id="header">
+  	<div id="wrapper">
+      <!-- content-->
+      <div id="content">
+          <form action="inputtag/submit_tag" method="post">
+          <!-- ID -->
+          <div>
+              <h3 class="join_title">
+                  <label for="id">본캐 닉네임</label>
+              </h3>
+              <span class="box int_id">
+                  <input type="text" name="main_nick" placeholder="본캐 닉을 적어주세요" class="main_nick_class" maxlength="20">
+              </span>
+              <span class="error_next_box"></span>
+          </div>
+          <div>
+              <h3 class="join_title">
+                  <label for="id">부캐 닉네임(엔터로 User 구분)</label>
+              </h3>
+              <span class="box int_textarea2">
+                  <textarea name="sub_nick" placeholder="부캐 닉을 적어주세요." class="sub_nick_class"></textarea>
+              </span>
+              <span class="error_next_box"></span>
+          </div>
+          <!-- JOIN BTN-->
+          <div class="btn_area">
+              <button type="submit" id="btnJoin">
+                  <span>Registeration</span>
+              </button>
+          </div>
+        </form>
+      </div>
+      <!-- content-->
+    </div>
+  </div>
+</html>
